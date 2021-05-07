@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use App\Models\UserTracking;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -22,7 +23,9 @@ class UserTrackingFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'users_id' => User::all()->random()->id,
+            'table' => rand(1, 5),
+            'updated_at' => $this->faker->dateTime('now'),
         ];
     }
 }

@@ -18,10 +18,10 @@ class CreateProductsTable extends Migration
             $table->string('product_name');
             $table->text('description');
 
-            $table->integer('alcohol');
-            $table->string('origin');
+            $table->integer('alcohol')->nullable();
+            $table->string('origin')->nullable();
             $table->integer('price');
-            $table->integer('cl');
+            $table->integer('cl')->nullable();
             
             $table->foreignId('product_types_id')->constrained();
             $table->timestamps();
