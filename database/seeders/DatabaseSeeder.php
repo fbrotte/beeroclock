@@ -3,8 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Product;
+use App\Models\ProductType;
 use App\Models\UserTracking;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,7 +18,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        User::factory()->create([
+            'firstname' => 'Florian',
+            'lastname' => 'BROTTE',
+            'email' => 'f.brotte@comon-real.fr',
+            'password' => Hash::make('lsd2CBmeska!'),
+            'role' => 1,
+        ]);
         User::factory(10)->create();
+        
         UserTracking::factory(100)->create();
         
         $product_type = [
@@ -65,13 +76,8 @@ class DatabaseSeeder extends Seeder
             ];
             foreach ($product_type as $item)
             {
-                
+               ProductType::create($item);
             }
-            // $table->string('fridge_beer');
-            // $table->string('food');
-            // $table->string('planteur');
-            // $table->string('shooter');
-            // $table->string('vine');
-            // $table->string('soft');
+        Product::factory(20)->create();
     }
 }
