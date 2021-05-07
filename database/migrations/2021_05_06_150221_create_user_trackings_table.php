@@ -15,6 +15,8 @@ class CreateUserTrackingsTable extends Migration
     {
         Schema::create('user_trackings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('users_id')->constrained();
+            $table->integer('table');
             $table->timestamps();
         });
     }
