@@ -2,9 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class User extends Controller
+class UserController extends Controller
 {
-    //
+    public function render()
+    {
+        return view('page.admin.home');
+    }
+    public function user_list()
+    {
+       return User::paginate(10);
+    }
 }

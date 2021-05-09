@@ -1,0 +1,40 @@
+
+// Small devices
+@mixin xs
+   @media (min-width: 300px)
+       @content
+
+@mixin sm
+   @media (min-width: 375px)
+       @content
+
+// Medium devices
+@mixin md
+   @media (min-width: 425px)
+       @content
+
+// Large devices
+@mixin lg
+   @media (min-width: 768px)
+       @content
+
+// Extra large devices
+@mixin xl
+   @media (min-width: 1024px)
+       @content
+
+// Extra large devices
+@mixin xxl
+   @media (min-width: 1920px)
+       @content
+
+// Custom devices
+@mixin rwd($screen)
+   @media (min-width: $screen+'px')
+       @content
+
+// Large devices
+@mixin nav
+   @media (max-width: 768px)
+       @content
+
