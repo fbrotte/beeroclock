@@ -15,7 +15,14 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
+    return view('pages.vitrine.auth.index');
+});
+
+Route::get('/p', function () {
     return view('pages.vitrine.home');
+});
+Route::get('/s', function () {
+    return view('swiper');
 });
 
 Route::get('admin', [UserController::class, 'user_list']);

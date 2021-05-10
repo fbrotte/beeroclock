@@ -1,82 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Swiper demo</title>
-    <!-- Link Swiper's CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
+@extends('layouts.showcase')
+@section('title', 'Beer\'o Clock')
+@section('content')
 
-    <!-- Demo styles -->
-    <style>
-      html,
-      body {
-        position: relative;
-        height: 100%;
-      }
-
-      body {
-        background: #eee;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        color: #000;
-        margin: 0;
-        padding: 0;
-      }
-
-      .swiper-container {
-        width: 100%;
-        height: 100%;
-      }
-
-      .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-      }
-
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- Swiper -->
-    <div class="swiper-container slider">
+<main id="showacase">
+  <div class="product-list">
+    <div class="swiper-container mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
+        <div class="swiper-slide">@for ($i = 0; $i < 3; $i++)
+          <div class="product">
+            <h2>Punk IPA</h2>
+            <img src="https://media-verticommnetwork1.netdna-ssl.com/wines/brewdog-punk-ipa-1005126.jpg"/>
+            <p class="description">meilleur bieres du monde, remi la tapette devrait pas l'aimer...</p>
+            <p class="price">6.69€/l</p>
+          </div> 
+          @endfor</div>
+        <div class="swiper-slide">@for ($i = 0; $i < 3; $i++)
+          <div class="product">
+            <h2>Punk IPA</h2>
+            <img src="https://media-verticommnetwork1.netdna-ssl.com/wines/brewdog-punk-ipa-1005126.jpg"/>
+            <p class="description">meilleur bieres du monde, remi la tapette devrait pas l'aimer...</p>
+            <p class="price">6.69€/l</p>
+          </div> 
+          @endfor</div>
+        <div class="swiper-slide">@for ($i = 0; $i < 3; $i++)
+          <div class="product">
+            <h2>Punk IPA</h2>
+            <img src="https://media-verticommnetwork1.netdna-ssl.com/wines/brewdog-punk-ipa-1005126.jpg"/>
+            <p class="description">meilleur bieres du monde, remi la tapette devrait pas l'aimer...</p>
+            <p class="price">6.69€/l</p>
+          </div> 
+          @endfor</div>
       </div>
-      <div class="swiper-pagination"></div>
     </div>
+  </div>
+    @include('layouts._social')
+</main>
 
-   <script src="{{asset('/js/app.js')}}"></script>
-  </body>
-</html>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+
+@endsection
