@@ -15,7 +15,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.vitrine.home');
 });
 
 Route::get('admin', [UserController::class, 'user_list']);
