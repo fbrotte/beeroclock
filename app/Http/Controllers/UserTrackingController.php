@@ -3,83 +3,41 @@
 namespace App\Http\Controllers;
 
 use App\Models\UserTracking;
-use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class UserTrackingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function __construct()
     {
-        //
+        $this->middleware('auth');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+   public function scan_qrcode(Int $table)
+   {
+        $user = Auth::user();
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        //dd($table);
+        $last_scan = UserTracking::where('users_id', $user->id)->alreadyScan();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\UserTracking  $userTracking
-     * @return \Illuminate\Http\Response
-     */
-    public function show(UserTracking $userTracking)
-    {
-        //
-    }
+        if($last_scan->count() > 0)
+        // $request->session()->flash('status', 'Task was successful!');
+            return redirect(route('showcase'))->with('status', 'alreadyScan');
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\UserTracking  $userTracking
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(UserTracking $userTracking)
-    {
-        //
-    }
+    
+        $tracking_created = UserTracking::create([
+            'users_id' => $user->id,
+            'table' => $table
+        ]);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\UserTracking  $userTracking
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, UserTracking $userTracking)
-    {
-        //
-    }
+        return $this->result($tracking_created);
+   }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\UserTracking  $userTracking
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(UserTracking $userTracking)
-    {
-        //
-    }
+   private function result($tracking_created)
+   {
+        if ($tracking_created->id % 100 === 0)
+            return redirect(route('showcase'))->with('status', 'userWin');
+
+        return redirect(route('showcase'))->with('status', 'userLogged');
+   }
 }

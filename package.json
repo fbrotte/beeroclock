@@ -24,6 +24,7 @@
         "tailwindcss": "^2.0.2"
     },
     "dependencies": {
+        "semver": "^7.3.5",
         "swiper": "^6.5.9"
     }
 }

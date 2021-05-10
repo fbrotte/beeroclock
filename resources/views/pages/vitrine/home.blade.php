@@ -61,6 +61,11 @@
   </head>
 
   <body>
+    @if (session('status'))
+        <div class="alert-success">
+            {{ session('status') }}
+        </div>
+    @endif
     <!-- Swiper -->
     <div class="swiper-container slider">
       <div class="swiper-wrapper">
