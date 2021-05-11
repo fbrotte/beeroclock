@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->integer('cl')->nullable();
             
-            $table->foreignId('product_types_id')->constrained();
+            $table->foreignId('product_type_id')->constrained();
             $table->timestamps();
         });
     }

@@ -66,8 +66,14 @@
             {{ session('status') }}
         </div>
     @endif
+    @dump($softs)
+    @foreach($softs as $soft)
+        @dump($soft->product_name)
+        @dump($soft->description)
+        @dump($soft->price)
+    @endforeach
     <!-- Swiper -->
-    <div class="swiper-container slider">
+    {{-- <div class="swiper-container slider">
       <div class="swiper-wrapper">
         <div class="swiper-slide">Slide 1</div>
         <div class="swiper-slide">Slide 2</div>
@@ -80,7 +86,7 @@
         <div class="swiper-slide">Slide 9</div>
       </div>
       <div class="swiper-pagination"></div>
-    </div>
+    </div> --}}
 
    <script src="{{asset('/js/app.js')}}"></script>
   </body>

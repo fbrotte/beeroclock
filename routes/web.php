@@ -4,6 +4,7 @@ namespace App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserTrackingController;
 
 /*
@@ -22,6 +23,8 @@ Route::get('/', function () {
 })->name('showcase');
 
 Route::get('admin', [UserController::class, 'user_list']);
+
+Route::get('/test', [ProductController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
