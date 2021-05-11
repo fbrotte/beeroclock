@@ -1,25 +1,49 @@
 #showcase
-
-.product-list
+    margin-bottom: 30px
+.swiper-container
     padding: 50px 30px
-    display: flex
-    flex-direction: column
-    gap: 80px
-    .product
-        align-items: center
+    width: 100vw
+    .swiper-slide
         display: flex
+        align-items: center
         flex-direction: column
         gap: 20px
-    p, h1
-        color: var(--white)
-    p
-        font-size: 0.9rem
-        text-align: center
-        
-    h1
-        font-size: 2rem
-        font-weight: bold
-        text-align: left !important
-    img
-        width: 80%
+        p, h1
+            color: var(--white)
+        p
+            font-size: 1rem
+            text-align: center
+        .description
+            padding: 10px
+            
+        h1
+            font-size: 2rem
+            font-weight: bold
+            text-align: left !important
+        img
+            width: 50%
+.swiper-button-prev
+    left: 60px !important
+.swiper-button-next
+    right: 60px !important
 
+.swiper-button-next, .swiper-button-prev
+    top: 15% !important
+    color: var(--yellow) !important
+    &::after
+        font-size: 0.9rem !important
+        font-weight: 1000 !important
+        text-shadow: -1px 0 var(--yellow), 0 1px var(--yellow), 1px 0 var(--yellow), 0 -1px var(--yellow) !important
+        border: var(--yellow) solid
+        border-radius: 38%
+        padding: 10px
+.social
+    text-align: center
+    color: var(--white)
+    h1
+        font-size: 1.5rem
+        padding: 10px 30px
+    p
+        font-size: 1rem
+        padding: 10px 50px
+        margin-bottom: 20px

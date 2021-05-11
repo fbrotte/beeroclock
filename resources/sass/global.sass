@@ -27,16 +27,17 @@ header
     height: 100%
     width: 100%
 body
-    // display: flex
-    // flex-direction: column
-    // justify-content: space-between
-    // &::before
-    //     @extend %body
-    //     z-index: 2
-    //     border: solid var(--yellow) 15px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    &::before
+        @extend %body
+        z-index: 2
+        pointer-events: none
+        border: solid var(--yellow) 15px
     &::after
         content: ''
-        background-image: url('/images/background.jpg')
+        background-image: url('/images/background2.jpg')
         background-position: center
         background-attachment: fixed
         background-size: cover

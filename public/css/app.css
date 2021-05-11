@@ -99,16 +99,26 @@ header .slogan {
   border-bottom: solid 3px var(--white);
 }
 
-body::after {
+body::after, body::before {
   content: "";
   position: fixed;
   height: 100%;
   width: 100%;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body::before {
+  z-index: 2;
+  pointer-events: none;
+  border: solid var(--yellow) 15px;
+}
 body::after {
   content: "";
-  background-image: url("/images/background.jpg");
+  background-image: url("/images/background2.jpg");
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -225,32 +235,72 @@ form {
   padding: 20px;
 }
 
-.product-list {
-  padding: 50px 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
+#showcase {
+  margin-bottom: 30px;
 }
-.product-list .product {
-  align-items: center;
+
+.swiper-container {
+  padding: 50px 30px;
+  width: 100vw;
+}
+.swiper-container .swiper-slide {
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 20px;
 }
-.product-list p, .product-list h1 {
+.swiper-container .swiper-slide p, .swiper-container .swiper-slide h1 {
   color: var(--white);
 }
-.product-list p {
-  font-size: 0.9rem;
+.swiper-container .swiper-slide p {
+  font-size: 1rem;
   text-align: center;
 }
-.product-list h1 {
+.swiper-container .swiper-slide .description {
+  padding: 10px;
+}
+.swiper-container .swiper-slide h1 {
   font-size: 2rem;
   font-weight: bold;
   text-align: left !important;
 }
-.product-list img {
-  width: 80%;
+.swiper-container .swiper-slide img {
+  width: 50%;
+}
+
+.swiper-button-prev {
+  left: 60px !important;
+}
+
+.swiper-button-next {
+  right: 60px !important;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  top: 15% !important;
+  color: var(--yellow) !important;
+}
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 0.9rem !important;
+  font-weight: 1000 !important;
+  text-shadow: -1px 0 var(--yellow), 0 1px var(--yellow), 1px 0 var(--yellow), 0 -1px var(--yellow) !important;
+  border: var(--yellow) solid;
+  border-radius: 38%;
+  padding: 10px;
+}
+
+.social {
+  text-align: center;
+  color: var(--white);
+}
+.social h1 {
+  font-size: 1.5rem;
+  padding: 10px 30px;
+}
+.social p {
+  font-size: 1rem;
+  padding: 10px 50px;
+  margin-bottom: 20px;
 }
 
 :root {
