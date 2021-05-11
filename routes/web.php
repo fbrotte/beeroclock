@@ -18,25 +18,13 @@ use App\Http\Controllers\UserTrackingController;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.vitrine.home');
-})->name('showcase');
+Route::get('/', [ShowcaseController::class, 'index'])->name('showcase');
 
-Route::get('admin', [UserController::class, 'user_list']);
+Route::get('/admin', [AdminController::class, 'user_list'])->name('dashboard');;
 
-Route::get('/test', [ProductController::class, 'index']);
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-Route::get('/qrcode/{n_table}', [UserTrackingController::class, 'scan_qrcode'])->name('qrcode');
-
+Route::get('/qrcode/{n_table}', [AuthController::class, 'scan_qrcode'])->name('qrcode');
 
 // LOGOUT
-Route::get('/deconnexion', function()  {
-    Auth::logout();
-    return redirect()->route('showcase');
-})->name('logout');
+Route::get('/deconnexion', [AuthController::class, 'logout'])->name('logout');
 
 require __DIR__.'/auth.php';

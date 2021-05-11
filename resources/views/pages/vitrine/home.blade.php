@@ -70,7 +70,7 @@
     @foreach($softs as $soft)
         @dump($soft->product_name)
         @dump($soft->description)
-        @dump($soft->price)
+        @dump(getPrice($soft->price, $soft->cl))
     @endforeach
     <!-- Swiper -->
     {{-- <div class="swiper-container slider">

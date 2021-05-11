@@ -21,7 +21,6 @@ class UserTrackingController extends Controller
         $last_scan = UserTracking::where('users_id', $user->id)->alreadyScan();
 
         if($last_scan->count() > 0)
-        // $request->session()->flash('status', 'Task was successful!');
             return redirect(route('showcase'))->with('status', 'alreadyScan');
 
     
@@ -31,6 +30,12 @@ class UserTrackingController extends Controller
         ]);
 
         return $this->result($tracking_created);
+   }
+
+   public function logout()
+   {
+        Auth::logout();
+        return redirect()->route('login');
    }
 
    private function result($tracking_created)
