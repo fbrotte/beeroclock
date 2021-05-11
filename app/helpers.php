@@ -1,6 +1,9 @@
 <?php
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
-function getPrice($price, $qty = NULL, $unit = 'cl')
+function getPrice($price, $qty = NULL, $unit = 'cl'): String
 {
     if($unit === 'l')
         $qty = $qty / 100;
@@ -20,4 +23,19 @@ function getPrice($price, $qty = NULL, $unit = 'cl')
         return $price . '€';
 
     return $price . '€ / ' . $qty . $unit;
+}
+
+function isActive($path): String
+{
+    return Route::currentRouteName() === $path ? 'active' : '';
+}
+
+function fullname($who = 'auth'): String
+{
+    if($who === 'auth')
+        $who = Auth::user();
+    else
+        $who = User::find($who);
+
+    return $who->firstname . ' ' . $who->lastname;
 }

@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "semver": "^7.3.5",
-        "swiper": "^6.5.9"
+        "swiper": "^6.5.9",
+        "themify-icons": "^1.0.0"
     }
 }
