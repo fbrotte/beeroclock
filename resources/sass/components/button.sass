@@ -1,0 +1,41 @@
+%button
+    color: var(--black)
+    background: var(--yellow)
+    position: relative
+    letter-spacing: 1px
+    padding: 25px
+    cursor: pointer
+    border-radius: 9px
+    z-index: 2
+    &::after
+      z-index: -1
+      border-radius: 9px
+      content: ""
+      position: absolute
+      height: 0px
+      width: 100%
+      top: 0px
+      right: 0px
+      background: var(--dark-yellow)
+      transition: height 0.5s ease
+    &:hover
+      &::after
+        height: 100%
+
+button
+    @extend %button
+
+    p
+      color: var(--white)
+      font-size: 0.9rem
+
+    b
+      font-weight: 600
+      font-size: 2rem
+
+@each $name, $colour in $theme_colors
+
+    .btn-#{$name}
+        @extend %button
+        background: #{ map-get($colour, background) }
+        color: #{ map-get($colour, color) }

@@ -61,35 +61,34 @@
   </head>
 
   <body>
-    @if (session('status'))
-        <div class="alert-success">
-            {{ session('status') }}
-        </div>
-    @endif
-    @dump($softs)
-    @foreach($softs as $soft)
-        @dump($soft->product_name)
-        @dump($soft->description)
-        @dump(getPrice($soft->price, $soft->cl))
-    @endforeach
     <!-- Swiper -->
-    {{-- <div class="swiper-container slider">
+    <div class="swiper-container mySwiper">
       <div class="swiper-wrapper">
-        @for ($u = 0; $u < 3; $u++)
-          <div class="swiper-slide">
-            @for ($i = 0; $i < 3; $i++)
-            <h1>Punk IPA</h1>
-            <img src="https://media-verticommnetwork1.netdna-ssl.com/wines/brewdog-punk-ipa-1005126.jpg"/>
-            <p class="price">6.69€/l</p>
-            <p class="description">meilleur bieres du monde, remi la tapette devrait pas l'aimer...</p>
-            <hr>
-          @endfor
-          </div>
-        @endfor
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
       </div>
-      <div class="swiper-pagination"></div>
-    </div> --}}
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
 
-   <script src="{{asset('/js/app.js')}}"></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
   </body>
 </html>
