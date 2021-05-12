@@ -1,4 +1,4 @@
-@extends('layouts.showcase')
+@extends('showcase.layouts.showcase')
 @section('title', 'Beer\'o Clock')
 @section('slogan', 'Bienvenue')
 @section('content') 

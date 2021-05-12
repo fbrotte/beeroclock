@@ -40,17 +40,95 @@
 <main id="showacase">
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        @for ($u = 0; $u < 3; $u++)
+
+          {{-- Draft Beer --}}
           <div class="swiper-slide">
-            @for ($i = 0; $i < 3; $i++)
-            <h1>Punk IPA</h1>
-            <img src="https://media-verticommnetwork1.netdna-ssl.com/wines/brewdog-punk-ipa-1005126.jpg"/>
-            <p class="price">6.69€/l</p>
-            <p class="description">meilleur bieres du monde, remi la tapette devrait pas l'aimer...</p>
+            <h1>Bierre Pression</h1>
             <hr>
-          @endfor
+            @foreach($draft_beer as $item)
+              <h1>{{ $item->product_name }}</h1>
+              <img src="https://media-verticommnetwork1.netdna-ssl.com/wines/brewdog-punk-ipa-1005126.jpg"/>
+              <p class="price">{{ getPrice($item->price, $item->cl, '4l') }}</p>
+              <p class="description">{{ $item->description }}</p>
+              <p>{{ $item->origin }} - {{ deg($item->alcohol) }}</p>
+              <hr>
+            @endforeach
           </div>
-        @endfor
+
+          <div class="swiper-slide">
+            <h1>Bierre Frigot</h1>
+            <hr>
+            @foreach($fridge_beer as $item)
+              <h1>{{ $item->product_name }} </h1>
+              <img src="https://media-verticommnetwork1.netdna-ssl.com/wines/brewdog-punk-ipa-1005126.jpg"/>
+              <p class="price">{{ getPrice($item->price, $item->cl, '4l') }} - {{ deg($item->alcohol) }}</p>
+              <p class="description">{{ $item->description }}</p>
+              <p>{{ $item->origin }} - {{ deg($item->alcohol) }}</p>
+              <hr>
+            @endforeach
+          </div>
+
+          <div class="swiper-slide">
+            <h1>Plateau degustation</h1>
+            <hr>
+            @foreach($food as $item)
+              <h1>{{ $item->product_name }} </h1>
+              <img src="https://media-verticommnetwork1.netdna-ssl.com/wines/brewdog-punk-ipa-1005126.jpg"/>
+              <p class="price">{{ getPrice($item->price) }}</p>
+              <p class="description">{{ $item->description }}</p>
+              <hr>
+            @endforeach
+          </div>
+
+          <div class="swiper-slide">
+            <h1>Planteur</h1>
+            <hr>
+            @foreach($food as $item)
+              <h1>{{ $item->product_name }} </h1>
+              <img src="https://media-verticommnetwork1.netdna-ssl.com/wines/brewdog-punk-ipa-1005126.jpg"/>
+              <p class="price">{{ getPrice($item->price, $item->qty) }}</p>
+              <p class="description">{{ $item->description }}</p>
+              <hr>
+            @endforeach
+          </div>
+
+          <div class="swiper-slide">
+            <h1>Shooter</h1>
+            <hr>
+            @foreach($food as $item)
+              <h1>{{ $item->product_name }} </h1>
+              <img src="https://media-verticommnetwork1.netdna-ssl.com/wines/brewdog-punk-ipa-1005126.jpg"/>
+              <p class="price">{{ getPrice($item->price, $item->qty) }}</p>
+              <p class="description">{{ $item->description }}</p>
+              <hr>
+            @endforeach
+          </div>
+
+          <div class="swiper-slide">
+            <h1>Vins</h1>
+            <hr>
+            @foreach($food as $item)
+              <h1>{{ $item->product_name }} </h1>
+              <img src="https://media-verticommnetwork1.netdna-ssl.com/wines/brewdog-punk-ipa-1005126.jpg"/>
+              <p class="price">{{ getPrice($item->price, $item->qty) }}</p>
+              <p class="description">{{ $item->description }}</p>
+              <hr>
+            @endforeach
+          </div>
+
+          <div class="swiper-slide">
+            <h1>Soft</h1>
+            <hr>
+            @foreach($food as $item)
+              <h1>{{ $item->product_name }} </h1>
+              <img src="https://media-verticommnetwork1.netdna-ssl.com/wines/brewdog-punk-ipa-1005126.jpg"/>
+              <p class="price">{{ getPrice($item->price, $item->qty) }}</p>
+              <p class="description">{{ $item->description }}</p>
+              <hr>
+            @endforeach
+          </div>
+
+
       </div>
     </div>
     @include('showcase/layouts._social')

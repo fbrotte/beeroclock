@@ -16,4 +16,4 @@ mix
 .sass('resources/showcase/sass/app.sass', 'public/showcase/css')
 
 .js('resources/admin/js/app.js', 'public/admin/js')
-.sass('resources/admin/sass/app.sass', 'public/admin/css')
+.sass('resources/admin/sass/app.scss', 'public/admin/css')

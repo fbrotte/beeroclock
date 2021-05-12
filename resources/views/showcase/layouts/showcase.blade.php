@@ -20,7 +20,6 @@
         <div class="logo"></div>
         @yield('nav')
         <div class="slogan">@yield('slogan')</div>
-        <hr>
     </header>
     
         @yield('content')
