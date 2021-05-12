@@ -16,13 +16,18 @@ function getPrice($price, $qty = NULL, $unit = 'cl'): String
         else
             $price = $price / $qty;
  
-        return $price . '€ / le demi';
+        return round($price, 1) . '€ / le demi';
     }
 
     if($qty === NULL)
         return $price . '€';
 
     return $price . '€ / ' . $qty . $unit;
+}
+
+function deg($deg)
+{
+    return $deg . '° d\'alcool';
 }
 
 function isActive($path): String

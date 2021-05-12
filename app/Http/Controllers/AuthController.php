@@ -10,27 +10,32 @@ class UserTrackingController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
-   public function scan_qrcode(Int $table)
-   {
-        $user = Auth::user();
+    public function create()
+    {
+        return view('showcase.pages.auth.index');
+    }
 
-        //dd($table);
-        $last_scan = UserTracking::where('users_id', $user->id)->alreadyScan();
+    public function scan_qrcode(Int $table)
+    {
+            $user = Auth::user();
 
-        if($last_scan->count() > 0)
-            return redirect(route('showcase'))->with('status', 'alreadyScan');
+            //dd($table);
+            $last_scan = UserTracking::where('users_id', $user->id)->alreadyScan();
 
-    
-        $tracking_created = UserTracking::create([
-            'users_id' => $user->id,
-            'table' => $table
-        ]);
+            if($last_scan->count() > 0)
+                return redirect(route('showcase'))->with('status', 'alreadyScan');
 
-        return $this->result($tracking_created);
-   }
+        
+            $tracking_created = UserTracking::create([
+                'users_id' => $user->id,
+                'table' => $table
+            ]);
+
+            return $this->result($tracking_created);
+    }
 
    public function logout()
    {

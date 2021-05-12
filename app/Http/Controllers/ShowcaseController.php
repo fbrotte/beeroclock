@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\ProductType;
 use Illuminate\Http\Request;
 
@@ -14,14 +15,16 @@ class ShowcaseController extends Controller
 
     public function index()
     {
+        // $draft_beer->first()->category->name;
+
         return view('showcase.pages.home', [
-            'draft_beers' => ProductType::list('draft_beer'),
-            'fridge_beers' => ProductType::list('fridge_beer'),
-            'foods' => ProductType::list('food'),
-            'planteurs' => ProductType::list('planteur'),
-            'shooters' => ProductType::list('shooter'),
-            'vines' => ProductType::list('vine'),
-            'softs' => ProductType::list('soft'),
+            'draft_beer' => ProductType::list('draft_beer'),
+            'fridge_beer' => ProductType::list('fridge_beer'),
+            'food' => ProductType::list('food'),
+            'planteur' => ProductType::list('planteur'),
+            'shooter' => ProductType::list('shooter'),
+            'vine' => ProductType::list('vine'),
+            'soft' => ProductType::list('soft'),
         ]);
     }
 }

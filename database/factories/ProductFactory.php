@@ -29,7 +29,7 @@ class ProductFactory extends Factory
             case 1: case 2: case 4: case 5: case 6:
                 return [
                     'product_name' => $this->faker->word(1),
-                    'description' => $this->faker->word(10),
+                    'description' => $this->faker->sentence(10),
                     'alcohol' => rand(8,18),
                     'origin' => $this->faker->country(),
                     'price' => rand(1, 10),
@@ -41,7 +41,7 @@ class ProductFactory extends Factory
             case 3:
                 return [
                     'product_name' => $this->faker->word(1),
-                    'description' => $this->faker->word(10),
+                    'description' => $this->faker->sentence(10),
                     'price' => rand(1, 10),
                     'product_type_id' => $product_id,
                 ];
@@ -50,7 +50,7 @@ class ProductFactory extends Factory
             case 7:
                 return [
                     'product_name' => $this->faker->word(1),
-                    'description' => $this->faker->word(10),
+                    'description' => $this->faker->sentence(10),
                     'price' => rand(1, 10),
                     'cl' => rand(1, 100),
                     'product_type_id' => $product_id,
