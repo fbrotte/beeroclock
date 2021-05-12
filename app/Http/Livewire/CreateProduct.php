@@ -21,7 +21,7 @@ class CreateProduct extends Component
         'description' => 'required',
         'alcohol' => 'numeric',
         'origin' => 'alpha_num',
-        'price' => 'numeric',
+        'price' => 'numeric | required',
         'cl' => 'integer',
         'product_type_id' => 'required|exists:ProductType,id',
 
@@ -39,7 +39,7 @@ class CreateProduct extends Component
     public function submit()
     {
         $data = $this->validate();
-        dump('test');
+        // dump('test');
         Product::create($data);
         session()->flash('message', 'Post successfully updated.');
     }
