@@ -9,12 +9,12 @@ class ShowcaseController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     public function index()
     {
-        return view('pages.vitrine.home', [
+        return view('showcase.pages.home', [
             'draft_beers' => ProductType::list('draft_beer'),
             'fridge_beers' => ProductType::list('fridge_beer'),
             'foods' => ProductType::list('food'),

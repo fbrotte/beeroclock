@@ -15,12 +15,12 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('pages.admin.home');
+        return view('admin.home');
     }
 
     public function product()
     {
-        return view('pages.admin.product');
+        return view('admin.product');
     }
 
 
