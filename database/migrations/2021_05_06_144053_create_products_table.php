@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('origin')->nullable();
             $table->integer('price');
             $table->integer('cl')->nullable();
+            $table->string('img_url')->nullable();
             
             $table->foreignId('product_type_id')->constrained();
             $table->timestamps();
