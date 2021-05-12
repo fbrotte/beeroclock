@@ -12,10 +12,13 @@
     <meta name="viewport" content="width=device-width" />
 
      <link href={{ asset("admin/css/app.css") }} rel="stylesheet" />
+	 @livewireStyles
 </head>
 
 <body>
+	@include('admin.layouts._navbar')
     @yield('content')          
 </body>
 	<script src={{ asset("admin/js/app.js") }}></script>
+	@livewireScripts
 </html>
