@@ -15,10 +15,14 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('pages.admin.home', [
-            'path' => Route::currentRouteName()
-        ]);
+        return view('pages.admin.home');
     }
+
+    public function product()
+    {
+        return view('pages.admin.product');
+    }
+
 
     public function user_list()
     {

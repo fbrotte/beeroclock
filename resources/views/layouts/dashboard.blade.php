@@ -15,6 +15,7 @@
      <link href={{ asset("dashboard/css/paper-dashboard.css") }} rel="stylesheet"/> -->
      <link href={{ asset("dashboard/css/demo.css") }} rel="stylesheet" />
      <link href={{ asset("dashboard/css/themify-icons.css") }} rel="stylesheet" />
+	 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -141,7 +142,11 @@
 </body>
 
 	<!--   Core JS Files. Extra: TouchPunch for touch library inside jquery-ui.min.js   -->
-	<script src={{ asset("dashboard/js/jquery.min.js") }} type="text/javascript"></script>
+	{{-- <script src={{ asset("dashboard/js/jquery.min.js") }} type="text/javascript"></script> --}}
+	<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
 	<script src={{ asset("dashboard/js/jquery-ui.min.js") }} type="text/javascript"></script>
 	<script src={{ asset("dashboard/js/perfect-scrollbar.min.js") }} type="text/javascript"></script>
 	<script src={{ asset("dashboard/js/bootstrap.min.js") }} type="text/javascript"></script>
@@ -164,26 +169,27 @@
 	<!--  Switch and Tags Input Plugins -->
 	<script src={{ asset("dashboard/js/bootstrap-switch-tags.js") }}></script>
 
-	{{-- <!-- Circle Percentage-chart -->
-	<script src={{ asset("dashboard/js/jquery.easypiechart.min.js") }}></script>
+
+	<!-- Circle Percentage-chart -->
+	{{-- <script src={{ asset("dashboard/js/jquery.easypiechart.min.js") }}></script> --}}
 
 	<!--  Charts Plugin -->
-	<script src={{ asset("dashboard/js/chartist.min.js") }}></script>
+	{{-- <script src={{ asset("dashboard/js/chartist.min.js") }}></script> --}}
 
 	<!--  Notifications Plugin    -->
-	<script src={{ asset("dashboard/js/bootstrap-notify.js") }}></script>
+	{{-- <script src={{ asset("dashboard/js/bootstrap-notify.js") }}></script> --}}
 
 	<!-- Sweet Alert 2 plugin -->
-	<script src={{ asset("dashboard/js/sweetalert2.js") }}></script>
+	{{-- <script src={{ asset("dashboard/js/sweetalert2.js") }}></script> --}}
 
 	<!-- Vector Map plugin -->
-	<script src={{ asset("dashboard/js/jquery-jvectormap.js") }}></script>
+	{{-- <script src={{ asset("dashboard/js/jquery-jvectormap.js") }}></script> --}}
 
 	<!--  Google Maps Plugin    -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> --}}
 
 	<!-- Wizard Plugin    -->
-	<script src={{ asset("dashboard/js/jquery.bootstrap.wizard.min.js") }}></script>
+	{{-- <script src={{ asset("dashboard/js/jquery.bootstrap.wizard.min.js") }}></script> --}}
 
 	<!--  Bootstrap Table Plugin    -->
 	<script src={{ asset("dashboard/js/bootstrap-table.js") }}></script>
@@ -192,11 +198,13 @@
 	<script src={{ asset("dashboard/js/jquery.datatables.js") }}></script>
 
 	<!--  Full Calendar Plugin    -->
-	<script src={{ asset("dashboard/js/fullcalendar.min.js") }}></script> --}}
+	{{-- <script src={{ asset("dashboard/js/fullcalendar.min.js") }}></script> --}}
 
 	<!-- Paper Dashboard PRO Core javascript and methods for Demo purpose -->
 	<script src={{ asset("dashboard/js/paper-dashboard.js") }}></script>
 
 	<!-- Paper Dashboard PRO DEMO methods, don't include it in your project! -->
 	<script src={{ asset("dashboard/js/demo.js") }}></script>
+
+	<script src={{ asset("js/dashboard.js") }}></script>
 </html>

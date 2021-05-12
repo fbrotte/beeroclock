@@ -15,8 +15,8 @@
 						</div>
 						<div class="col-xs-7">
 							<div class="numbers">
-								<p>Capacity</p>
-								105GB
+								<p>Client Inscrit Total</p>
+								50
 							</div>
 						</div>
 					</div>
@@ -41,8 +41,8 @@
 						</div>
 						<div class="col-xs-7">
 							<div class="numbers">
-								<p>Revenue</p>
-								$1,345
+								<p>Clients</p>
+								10
 							</div>
 						</div>
 					</div>
@@ -50,7 +50,7 @@
 				<div class="card-footer">
 					<hr />
 					<div class="stats">
-						<i class="ti-calendar"></i> Last day
+						<i class="ti-calendar"></i> Venu ce week-end
 					</div>
 				</div>
 			</div>
@@ -66,7 +66,7 @@
 						</div>
 						<div class="col-xs-7">
 							<div class="numbers">
-								<p>Errors</p>
+								<p>Clients</p>
 								23
 							</div>
 						</div>
@@ -75,12 +75,12 @@
 				<div class="card-footer">
 					<hr />
 					<div class="stats">
-						<i class="ti-timer"></i> In the last hour
+						<i class="ti-timer"></i> Ce mois
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-3 col-sm-6">
+		{{-- <div class="col-lg-3 col-sm-6">
 			<div class="card">
 				<div class="card-content">
 					<div class="row">
@@ -104,6 +104,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 	</div>
 @endsection
