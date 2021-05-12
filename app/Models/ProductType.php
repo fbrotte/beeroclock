@@ -9,4 +9,15 @@ class ProductType extends Model
 {
     use HasFactory;
     public $timestamps = false;
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
+
+    public function scopeList($query, $type)
+    {
+        return $query->where('slug', $type)->first()->products;
+    }
 }
+

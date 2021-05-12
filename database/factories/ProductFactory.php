@@ -34,7 +34,7 @@ class ProductFactory extends Factory
                     'origin' => $this->faker->country(),
                     'price' => rand(1, 10),
                     'cl' => rand(1, 100),
-                    'product_types_id' => $product_id,
+                    'product_type_id' => $product_id,
                 ];
             break;
             //bouffe
@@ -43,7 +43,7 @@ class ProductFactory extends Factory
                     'product_name' => $this->faker->word(1),
                     'description' => $this->faker->word(10),
                     'price' => rand(1, 10),
-                    'product_types_id' => $product_id,
+                    'product_type_id' => $product_id,
                 ];
             break;
             //boisse pour enfant
@@ -53,7 +53,7 @@ class ProductFactory extends Factory
                     'description' => $this->faker->word(10),
                     'price' => rand(1, 10),
                     'cl' => rand(1, 100),
-                    'product_types_id' => $product_id,
+                    'product_type_id' => $product_id,
                 ];
             break;
         }

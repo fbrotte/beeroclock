@@ -1,0 +1,52 @@
+html, body
+    font-family: Rubik,sans-serif
+
+strong
+    font-weight: 900
+    font-size: 1.5rem
+    text-align: center
+header
+    z-index: 10
+    .logo
+        background-image: url('/images/logo.svg')
+        background-repeat: no-repeat
+        background-size: cover
+        position: relative
+        top: 35px
+        margin: auto
+        height: 100px
+        width: 300px
+    .slogan
+        font-size: 20px
+        color: var(--white)
+        padding-bottom: 15px
+        text-align: center
+        margin-top: 10%
+
+
+
+%body
+    content: ''
+    position: fixed
+    height: 100%
+    width: 100%
+body
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    &::before
+        @extend %body
+        z-index: 20
+        pointer-events: none
+        border: solid var(--yellow) $size-cadre
+    &::after
+        content: ''
+        background-image: url('/images/background2.jpg')
+        background-position: center
+        background-attachment: fixed
+        background-size: cover
+        @extend %body
+        
+main
+    z-index: 10
+    margin: auto

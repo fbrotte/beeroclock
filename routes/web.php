@@ -1,7 +1,12 @@
 <?php
+namespace App;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ShowcaseController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,14 +19,18 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.vitrine.home');
-});
+Route::get('/', [ShowcaseController::class, 'index'])->name('showcase');
 
-Route::get('admin', [UserController::class, 'user_list']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/admin/stats', [AdminController::class, 'index'])->name('admin.stat');
+Route::get('/admin/produits', [AdminController::class, 'product'])->name('admin.product');
+
+
+Route::get('/qrcode/{n_table}', [AuthController::class, 'scan_qrcode'])->name('qrcode');
+
+// LOGOUT
+Route::get('/deconnexion', [AuthController::class, 'logout'])->name('logout');
 
 require __DIR__.'/auth.php';
