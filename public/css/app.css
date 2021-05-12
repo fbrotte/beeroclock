@@ -73,19 +73,25 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6, p, button, input, label, b, span {
+html, body {
   font-family: Rubik, sans-serif;
 }
 
+strong {
+  font-weight: 900;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
 header {
-  z-index: 1;
+  z-index: 10;
 }
 header .logo {
   background-image: url("/images/logo.svg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  top: 20px;
+  top: 35px;
   margin: auto;
   height: 100px;
   width: 300px;
@@ -96,7 +102,6 @@ header .slogan {
   padding-bottom: 15px;
   text-align: center;
   margin-top: 10%;
-  border-bottom: solid 3px var(--white);
 }
 
 body::after, body::before {
@@ -112,7 +117,7 @@ body {
   justify-content: space-between;
 }
 body::before {
-  z-index: 2;
+  z-index: 20;
   pointer-events: none;
   border: solid var(--yellow) 15px;
 }
@@ -125,7 +130,7 @@ body::after {
 }
 
 main {
-  z-index: 1;
+  z-index: 10;
   margin: auto;
 }
 
@@ -205,14 +210,66 @@ button b {
 input {
   color: var(--white);
   border-radius: 3px;
-  margin-top: 15px;
-  height: 30px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  height: 35px;
   width: 100%;
 }
 
 label {
   font-size: 1.5rem;
   color: var(--yellow);
+}
+
+.alert-black, .alert-white, .alert-green, .alert-red, .alert-yellow, .alert-dark-yellow, .alert-grey {
+  padding: 40px 30px;
+  background-color: var(--green);
+  color: var(--white);
+  z-index: 11;
+  margin: 20px;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: var(--white);
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: var(--black);
+}
+
+.alert-grey {
+  background: #181A1B;
+}
+
+.alert-dark-yellow {
+  background: #B37A00;
+}
+
+.alert-yellow {
+  background: #FFBD2F;
+}
+
+.alert-red {
+  background: #E74C3C;
+}
+
+.alert-green {
+  background: #2ECC71;
+}
+
+.alert-white {
+  background: #fff;
+}
+
+.alert-black {
+  background: #000;
 }
 
 #home {
@@ -225,14 +282,15 @@ label {
   font-weight: bold;
   width: 290px;
   height: 70px;
-  padding: 20px;
+  padding: 0px;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
+  padding: 20px 40px;
+}
+
+img {
+  padding-left: 20px;
 }
 
 #showcase {
@@ -244,6 +302,7 @@ form {
   width: 100vw;
 }
 .swiper-container .swiper-slide {
+  padding: 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -255,9 +314,6 @@ form {
 .swiper-container .swiper-slide p {
   font-size: 1rem;
   text-align: center;
-}
-.swiper-container .swiper-slide .description {
-  padding: 10px;
 }
 .swiper-container .swiper-slide h1 {
   font-size: 2rem;
@@ -301,6 +357,28 @@ form {
   font-size: 1rem;
   padding: 10px 50px;
   margin-bottom: 20px;
+}
+
+hr {
+  border: 2px solid var(--yellow);
+  width: 50%;
+}
+
+.legal {
+  text-align: center;
+}
+.legal #fkw {
+  color: var(--white);
+  font-size: 0.9rem;
+  margin: 20px;
+}
+.legal #fkw a {
+  color: var(--white);
+}
+.legal button {
+  font-size: 0.9rem;
+  padding: 10px !important;
+  margin: 20px 10px !important;
 }
 
 :root {

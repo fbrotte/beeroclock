@@ -12,11 +12,17 @@
     {{-- <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script> --}}
 </head>
 <body>
+  <div class="alert-green">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    <strong>Info!</strong> <p>Le 100ème visiteurs auras droit a un plateau gratuit :).</p>
+  </div>
     <header>
         <div class="logo"></div>
         @yield('nav')
         <div class="slogan">@yield('slogan')</div>
+        <hr>
     </header>
+    
         @yield('content')
                
         <div id="fb-root"></div>

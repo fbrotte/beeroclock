@@ -11,7 +11,7 @@
 {{-- <main x-data="{step: 'home'}"> --}}
 <main x-data="formController()" x-cloak>
 
-    <div id="home" x-show.transition.opacity.duration.2000ms="step == 'home'">
+    <div id="home" x-spread="btn_reveal">
         <button @click="btnLogin()">
             <b>Connexion</b><br/>
             <p>Je suis consomateur</p>
@@ -22,7 +22,7 @@
         </button>
     </div>
 
-    <button x-spread="home" @click="btnHome"> Retour </button>
+    <img src="/images/boutton.svg" x-spread="home" @click="btnHome">
 
     <form id="login" method="post" x-spread="login_reveal">
         <label for="email">Adresse Mail</label>
@@ -33,9 +33,13 @@
     </form>
 
     <form id="register" method="post" x-spread="register_reveal">
+        <label for="text">Nom prénom</label>
         <input type="text" placeholder="jean dupont">
+        <label for="email">Adresse Mail</label>
         <input type="email" placeholder="Contact@example.com">
+        <label for="password">Mot de passe</label>
         <input type="password">
+        <label for="tel">Numéro de smartphone</label>
         <input type="tel" placeholder="0123456789">
         <button type="submit">Envoyer</button>
     </form>
@@ -48,7 +52,7 @@
     // ['x-transition:leave']: 'transition ease-in duration-1000',
     // ['x-transition:leave-start']: 'opacity-100 transform scale-100',
     // ['x-transition:leave-end']: 'opacity-0 transform scale-90,"
-
+    let animation = 'x-show.transition.in.duration.800ms.out.duration.0ms'
     return {
         step: 'home',
 
@@ -69,14 +73,19 @@
         },
 
         login_reveal: {
-            ['x-show.transition']() {
+            [animation]() {
                 return this.step == 'login'
             },
         },
 
         register_reveal: {
-            ['x-show.transition']() {
+            [animation]() {
                 return this.step == 'register'
+            },
+        },
+        btn_reveal: {
+            [animation]() {
+                return this.step == 'home'
             },
         },
     }

@@ -1,5 +1,6 @@
 @extends('layouts.showcase')
 @section('title', 'Beer\'o Clock')
+@section('slogan', 'The Place To Beer !')
 @section('content')
 @section('nav')
 <div class="swiper-button-next"></div>
@@ -22,6 +23,8 @@
       </div>
     </div>
     @include('layouts._social')
+    <hr>
+    @include('layouts._cgu')
 </main>
 
 <script>

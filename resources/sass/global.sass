@@ -1,14 +1,18 @@
-h1, h2, h3, h4, h5, h6, p, button, input, label, b, span
+html, body
     font-family: Rubik,sans-serif
 
+strong
+    font-weight: 900
+    font-size: 1.5rem
+    text-align: center
 header
-    z-index: 1
+    z-index: 10
     .logo
         background-image: url('/images/logo.svg')
         background-repeat: no-repeat
         background-size: cover
         position: relative
-        top: 20px
+        top: 35px
         margin: auto
         height: 100px
         width: 300px
@@ -18,7 +22,7 @@ header
         padding-bottom: 15px
         text-align: center
         margin-top: 10%
-        border-bottom: solid 3px var(--white)
+
 
 
 %body
@@ -32,9 +36,9 @@ body
     justify-content: space-between
     &::before
         @extend %body
-        z-index: 2
+        z-index: 20
         pointer-events: none
-        border: solid var(--yellow) 15px
+        border: solid var(--yellow) $size-cadre
     &::after
         content: ''
         background-image: url('/images/background2.jpg')
@@ -44,5 +48,5 @@ body
         @extend %body
         
 main
-    z-index: 1
+    z-index: 10
     margin: auto
