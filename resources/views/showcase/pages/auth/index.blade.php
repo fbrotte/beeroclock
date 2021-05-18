@@ -10,7 +10,6 @@
 </style>
 {{-- <main x-data="{step: 'home'}"> --}}
 <main x-data="formController()" x-cloak>
-<a href="/" onclick="twPleinEcran();">Produits</a>
     <div id="home" x-spread="btn_reveal">
         <button  @click="btnLogin()">
             <b>Connexion</b><br/>
@@ -21,14 +20,15 @@
             <p>Consomateur en devenir</p>
         </button>
     </div>
-
+{{dump(Auth::check())}}
     <img src="/images/boutton.svg" x-spread="home" @click="btnHome">
 
-    <form id="login" method="post" x-spread="login_reveal">
+    <form action="{{route('post_login')}}" id="login" method="post" x-spread="login_reveal">
+        @csrf
         <label for="email">Adresse Mail</label>
-        <input type="email" placeholder="Contact@example.com">
+        <input name="email" type="email" placeholder="Contact@example.com">
         <label for="Password">Mot de passe</label>
-        <input type="password">
+        <input name="password" type="password">
         <button type="submit">Envoyer</button>
     </form>
 
