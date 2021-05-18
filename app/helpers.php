@@ -39,3 +39,10 @@ function fullname($who = 'auth'): String
 
     return $who->firstname . ' ' . $who->lastname;
 }
+
+
+
+function image($img, $h = null, $w = null, $q = 10, $fm = 'webp', $crop = 'crop')
+{
+    return asset("images/" .$img. "?h=".$h."&w=".$w."&q=".$q."&fm=".$fm."&fit=".$crop); 
+}
