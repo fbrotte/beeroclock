@@ -32317,7 +32317,6 @@ button b {
 }
 
 input {
-  color: var(--white);
   border-radius: 3px;
   margin-bottom: 20px;
   margin-top: 5px;
