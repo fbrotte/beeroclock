@@ -22,7 +22,9 @@ class ProductTypeFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'alcohol' => false,
+            'origin' => false,
+            'qty' => 'unit',
         ];
     }
 }

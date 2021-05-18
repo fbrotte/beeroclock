@@ -32,8 +32,6 @@
 
         </div>
         <!-- end best seller & traffic -->
-
-
     </div>
     <!-- end content -->
 

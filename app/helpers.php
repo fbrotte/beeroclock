@@ -3,11 +3,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-function getPrice($price, $qty = NULL, $unit = 'cl'): String
+function getPrice($price, $qty = NULL, $unit = 'unit'): String
 {
-    if($unit === 'l')
-        $qty = $qty / 100;
-
     if($unit === '4l')
     {
         $qty = $qty / 25;
@@ -19,10 +16,8 @@ function getPrice($price, $qty = NULL, $unit = 'cl'): String
         return round($price, 1) . '€ / le demi';
     }
 
-    if($qty === NULL)
-        return $price . '€';
-
-    return $price . '€ / ' . $qty . $unit;
+    // if unit
+    return $price . '€';
 }
 
 function deg($deg)

@@ -13,7 +13,7 @@ class CreateProduct extends Component
     public $alcohol;
     public $origin;
     public $price;
-    public $cl;
+    public $qty;
     public $product_type_id;
 
     protected $rules = [
@@ -22,18 +22,20 @@ class CreateProduct extends Component
         'alcohol' => 'numeric',
         'origin' => 'alpha_num',
         'price' => 'numeric | required',
-        'cl' => 'integer',
-        'product_type_id' => 'required|exists:ProductType,id',
+        'qty' => 'integer',
+        'product_type_id' => 'required|exists:product_types,id',
 
     ];
 
     protected $messages = [
-        'product_name.required' => 'Le nom est obligatoire',
-        'description.required' => 'La drescription est obligatoire',
-        'alcohol.numeric' => 'Le pourcentage d\alcool doit etre indiqué en chiffre',
-        'price.numeric' => 'Le prix doit être indiqué en chiffre',
-        'cl.integer' => 'La quantité doit être indiqué en avec un nombre entier',
-        'product_type_id.required' => 'Ne t\amuse pas à changer le html petit coquin',
+        'product_name.required' => "Le nom est obligatoire",
+        'description.required' => "La drescription est obligatoire",
+        'alcohol.numeric' => "Le pourcentage d'alcool doit etre indiqué en chiffre",
+        'origin.alpha_num' => "Il faut remplire uniquement avec des lettres.",
+        'price.numeric' => "Le prix doit être indiqué en chiffre",
+        'qty.integer' => "La quantité doit être indiqué en avec un nombre entier",
+        'product_type_id.exists' => "Ne t'amuse pas à changer le html petit coquin",
+        'product_type_id.required' => "Tu dois selectionner une catagorie obligatoirement",
     ];
 
     public function submit()
@@ -41,7 +43,10 @@ class CreateProduct extends Component
         $data = $this->validate();
         // dump('test');
         Product::create($data);
-        session()->flash('message', 'Post successfully updated.');
+        session()->flash('message', 'Le produit a bien été ajouté');
+
+        $this->emit('alert_remove');
+        $this->reset();
     }
 
     public function render()

@@ -1,55 +1,34 @@
-
-<form class="mt-6" wire:submit.prevent="submit">
+<form class="mt-6" wire:submit.prevent="submit" x-data="formController()" x-cloak>
 
     @if (session()->has('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
-        </div>
+    <div class="alert alert-success">
+        {{ session('message') }}
+    </div>
     @endif
 
+    <h3 x-text="choice"> </h3>
+    
     <label class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Catégorie</label>
-    <select class="border border-gray-300 text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none" wire:model="product_type_id">
+    @error('product_type_id') <span class="error">{{ $message }}</span> @enderror
+    <select x-model.number="choice"
+        class="border border-gray-300 text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none"
+        wire:model.defer="product_type_id">
 
+        <option value="" selected>Choisis une categorie</option>
         @foreach($productType as $item)
-            <option value="{{ $item->id }}">{{ $item->name }}</option>
+        <option :value="{{ $item->id }}">{{ $item->name }}</option>
         @endforeach
     </select>
+    
+    <div x-spread="all">
+        <x-forms.create-product.input type="text" id="product_name">Nom</x-forms.create-product.input>
+        <x-forms.create-product.input type="text" id="description">Description</x-forms.create-product.input>
+        <x-forms.create-product.input type="number" id="alcohol">Alcool</x-forms.create-product.input>
+        <x-forms.create-product.input type="text" id="origin">Origine</x-forms.create-product.input>
+        <x-forms.create-product.input type="number" step="1" id="qty">Quantité</x-forms.create-product.input>
+        <x-forms.create-product.input type="number" step="0.01" id="price">Prix</x-forms.create-product.input>
+    </div>
 
-    @error('product_name') <span class="error">{{ $message }}</span> @enderror
-    <label class="block text-xs font-semibold text-gray-600 uppercase">Nom</label>
-    <input type="text" wire:model="product_name"
-        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-        required />
-
-    @error('description') <span class="error">{{ $message }}</span> @enderror
-    <label class="block text-xs font-semibold text-gray-600 uppercase">Description</label>
-    <input type="text" wire:model="description"
-        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-        required />
-
-    @error('alcohol') <span class="error">{{ $message }}</span> @enderror
-    <label class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Alcool</label>
-    <input type="number" wire:model="alcohol"
-        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-        required />
-
-    @error('origin') <span class="error">{{ $message }}</span> @enderror
-    <label class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Origine</label>
-    <input type="text" wire:model="origin"
-        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-        required />
-
-    @error('price') <span class="error">{{ $message }}</span> @enderror
-    <label class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Prix</label>
-    <input type="text" wire:model="price"
-        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-        required />
-
-    @error('cl') <span class="error">{{ $message }}</span> @enderror
-    <label class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Quantité (cl)</label>
-    <input type="number" wire:model="cl"
-        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-        required />
 
     <button type="submit"
         class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
@@ -58,3 +37,46 @@
 
 </form>
 
+
+<script>
+    
+function formController() {
+
+    let alcohol = [1, 2, 4, 5, 6]
+    let origin = [1, 2, 6]
+
+
+    return {
+        choice: 0,
+
+        all: {
+            ['x-show']() {
+                return this.choice != 0
+            },
+        },
+
+        product_name: {},
+        description: {},
+        alcohol: {
+            ['x-show']() {
+                return alcohol.includes(this.choice)
+            },
+        },
+        origin: {
+            ['x-show']() {
+                return origin.includes(this.choice)
+            },
+        },
+        qty: {},
+        price: {},
+
+
+        // alcohol: {
+        //     ['x-show']() {
+        //         return alcohol.includes(this->choice)
+        //     },
+        // },
+    }
+}
+    
+</script>

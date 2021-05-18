@@ -9,7 +9,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Product extends Model
 {
     use HasFactory;
-    public $timestamps = false;
+    public $timestamps = true;
+
+    protected $guarded = [''];
 
     public function category()
     {

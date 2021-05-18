@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->integer('alcohol')->nullable();
             $table->string('origin')->nullable();
             $table->integer('price');
-            $table->integer('cl')->nullable();
+            $table->integer('qty')->nullable();
             $table->string('img_url')->nullable();
             
             $table->foreignId('product_type_id')->constrained();

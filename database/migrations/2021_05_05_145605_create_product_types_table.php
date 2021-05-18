@@ -19,6 +19,12 @@ class CreateProductTypesTable extends Migration
             $table->string('slug');
             $table->integer('position');
             $table->text('description');
+
+            // SPECS
+            $table->boolean('alcohol');
+            $table->boolean('origin');
+            $table->string('qty');
+
         });
     }
 
