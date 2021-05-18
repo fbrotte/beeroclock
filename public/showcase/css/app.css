@@ -134,6 +134,21 @@ main {
   margin: auto;
 }
 
+hr {
+  border: 2px solid var(--yellow);
+  width: 30%;
+}
+
+hr.small {
+  width: 20%;
+}
+
+hr.sub {
+  width: 40%;
+  position: relative;
+  top: 80px;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -222,6 +237,7 @@ label {
 }
 
 .alert-black, .alert-white, .alert-green, .alert-red, .alert-yellow, .alert-dark-yellow, .alert-grey {
+  position: fixed;
   padding: 40px 30px;
   background-color: var(--green);
   color: var(--white);
@@ -296,47 +312,55 @@ img {
 #showcase {
   margin-bottom: 30px;
 }
-
-.swiper-container {
-  padding: 50px 30px;
+#showcase .swiper-container {
+  padding: 0px 30px;
   width: 100vw;
+  min-height: 50vh;
 }
-.swiper-container .swiper-slide {
+#showcase .swiper-container .swiper-slide {
   padding: 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 20px;
 }
-.swiper-container .swiper-slide p, .swiper-container .swiper-slide h1 {
+#showcase .swiper-container .swiper-slide h1, #showcase .swiper-container .swiper-slide h2, #showcase .swiper-container .swiper-slide p {
+  text-align: center;
   color: var(--white);
 }
-.swiper-container .swiper-slide p {
+#showcase .swiper-container .swiper-slide h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-bottom: 50px;
+}
+#showcase .swiper-container .swiper-slide h2 {
+  font-size: 1.5rem;
+}
+#showcase .swiper-container .swiper-slide img {
+  width: 50%;
+}
+#showcase .swiper-container .swiper-slide p {
   font-size: 1rem;
   text-align: center;
 }
-.swiper-container .swiper-slide h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: left !important;
+#showcase .swiper-container .swiper-slide .price {
+  font-weight: 900;
+  color: var(--white);
+  background-color: var(--yellow);
+  padding: 8px;
+  border-radius: 5px;
 }
-.swiper-container .swiper-slide img {
-  width: 50%;
-}
-
-.swiper-button-prev {
+#showcase .swiper-button-prev {
   left: 60px !important;
 }
-
-.swiper-button-next {
+#showcase .swiper-button-next {
   right: 60px !important;
 }
-
-.swiper-button-next, .swiper-button-prev {
+#showcase .swiper-button-next, #showcase .swiper-button-prev {
   top: 15% !important;
   color: var(--yellow) !important;
 }
-.swiper-button-next::after, .swiper-button-prev::after {
+#showcase .swiper-button-next::after, #showcase .swiper-button-prev::after {
   font-size: 0.9rem !important;
   font-weight: 1000 !important;
   text-shadow: -1px 0 var(--yellow), 0 1px var(--yellow), 1px 0 var(--yellow), 0 -1px var(--yellow) !important;
@@ -344,38 +368,31 @@ img {
   border-radius: 38%;
   padding: 10px;
 }
-
-.social {
+#showcase .social {
   text-align: center;
   color: var(--white);
 }
-.social h1 {
+#showcase .social h1 {
   font-size: 1.5rem;
   padding: 10px 30px;
 }
-.social p {
+#showcase .social p {
   font-size: 1rem;
   padding: 10px 50px;
   margin-bottom: 20px;
 }
-
-hr {
-  border: 2px solid var(--yellow);
-  width: 50%;
-}
-
-.legal {
+#showcase .legal {
   text-align: center;
 }
-.legal #fkw {
+#showcase .legal #fkw {
   color: var(--white);
   font-size: 0.9rem;
   margin: 20px;
 }
-.legal #fkw a {
+#showcase .legal #fkw a {
   color: var(--white);
 }
-.legal button {
+#showcase .legal button {
   font-size: 0.9rem;
   padding: 10px !important;
   margin: 20px 10px !important;

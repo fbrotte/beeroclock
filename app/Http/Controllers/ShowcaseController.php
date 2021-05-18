@@ -17,14 +17,17 @@ class ShowcaseController extends Controller
     {
         // $draft_beer->first()->category->name;
 
+
+        // 'draft_beer' => ProductType::list('draft_beer'),
+        // 'fridge_beer' => ProductType::list('fridge_beer'),
+        // 'food' => ProductType::list('food'),
+        // 'planteur' => ProductType::list('planteur'),
+        // 'shooter' => ProductType::list('shooter'),
+        // 'vine' => ProductType::list('vine'),
+        // 'soft' => ProductType::list('soft'),
+
         return view('showcase.pages.home', [
-            'draft_beer' => ProductType::list('draft_beer'),
-            'fridge_beer' => ProductType::list('fridge_beer'),
-            'food' => ProductType::list('food'),
-            'planteur' => ProductType::list('planteur'),
-            'shooter' => ProductType::list('shooter'),
-            'vine' => ProductType::list('vine'),
-            'soft' => ProductType::list('soft'),
+            'product_type' => ProductType::all(),
         ]);
     }
 }

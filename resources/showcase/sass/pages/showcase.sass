@@ -1,65 +1,75 @@
 #showcase
     margin-bottom: 30px
-.swiper-container
-    padding: 50px 30px
-    width: 100vw
-    .swiper-slide
-        padding: 20px
-        display: flex
-        align-items: center
-        flex-direction: column
-        gap: 20px
-        p, h1
-            color: var(--white)
+    .swiper-container
+        padding: 0px 30px
+        width: 100vw
+        min-height: 50vh
+        .swiper-slide
+            padding: 20px
+            display: flex
+            align-items: center
+            flex-direction: column
+            gap: 20px
+            h1, h2, p
+                text-align: center
+                color: var(--white)
+            // Product type
+            h1
+                font-size: 2rem
+                font-weight: bold
+                padding-bottom: 50px
+            // Product name
+            h2
+                font-size: 1.5rem
+            img
+                width: 50%
+            p
+                font-size: 1rem
+                text-align: center
+
+            .price
+                font-weight: 900
+                color: var(--white)
+                background-color: var(--yellow)
+                padding: 8px
+                border-radius: 5px
+
+
+    .swiper-button-prev
+        left: 60px !important
+    .swiper-button-next
+        right: 60px !important
+
+    .swiper-button-next, .swiper-button-prev
+        top: 15% !important
+        color: var(--yellow) !important
+        &::after
+            font-size: 0.9rem !important
+            font-weight: 1000 !important
+            text-shadow: -1px 0 var(--yellow), 0 1px var(--yellow), 1px 0 var(--yellow), 0 -1px var(--yellow) !important
+            border: var(--yellow) solid
+            border-radius: 38%
+            padding: 10px
+    .social
+        text-align: center
+        color: var(--white)
+        h1
+            font-size: 1.5rem
+            padding: 10px 30px
         p
             font-size: 1rem
-            text-align: center
-        // .description
-        //     padding: 10px
+            padding: 10px 50px
+            margin-bottom: 20px
             
-        h1
-            font-size: 2rem
-            font-weight: bold
-            text-align: left !important
-        img
-            width: 50%
-.swiper-button-prev
-    left: 60px !important
-.swiper-button-next
-    right: 60px !important
-
-.swiper-button-next, .swiper-button-prev
-    top: 15% !important
-    color: var(--yellow) !important
-    &::after
-        font-size: 0.9rem !important
-        font-weight: 1000 !important
-        text-shadow: -1px 0 var(--yellow), 0 1px var(--yellow), 1px 0 var(--yellow), 0 -1px var(--yellow) !important
-        border: var(--yellow) solid
-        border-radius: 38%
-        padding: 10px
-.social
-    text-align: center
-    color: var(--white)
-    h1
-        font-size: 1.5rem
-        padding: 10px 30px
-    p
-        font-size: 1rem
-        padding: 10px 50px
-        margin-bottom: 20px
-hr
-    border: 2px solid var(--yellow)
-    width: 50%
-.legal
-    text-align: center
-    #fkw
-        color: var(--white)
-        font-size: 0.9rem
-        margin: 20px
-        a
+    .legal
+        text-align: center
+        #fkw
             color: var(--white)
-    button
-        font-size: 0.9rem
-        padding: 10px !important
-        margin: 20px 10px !important
+            font-size: 0.9rem
+            margin: 20px
+            a
+                color: var(--white)
+        button
+            font-size: 0.9rem
+            padding: 10px !important
+            margin: 20px 10px !important

@@ -10,9 +10,9 @@
 </style>
 {{-- <main x-data="{step: 'home'}"> --}}
 <main x-data="formController()" x-cloak>
-
+<a href="/" onclick="twPleinEcran();">Produits</a>
     <div id="home" x-spread="btn_reveal">
-        <button @click="btnLogin()">
+        <button  @click="btnLogin()">
             <b>Connexion</b><br/>
             <p>Je suis consomateur</p>
         </button>
@@ -45,6 +45,7 @@
     </form>
 </main>
 <script>
+    
     function formController() {
     // ['x-transition:enter']: 'transition ease-out duration-1000',
     // ['x-transition:enter-start']: 'opacity-0 transform scale-90',
@@ -58,12 +59,15 @@
 
         btnHome() {
             this.step = 'home'
+            
         },
         btnLogin() {
             this.step = 'login'
+            twPleinEcran();
         },
         btnRegister() {
             this.step = 'register'
+            twPleinEcran();
         },
 
         home: {
