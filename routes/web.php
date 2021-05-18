@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ShowcaseController;
 
 
@@ -24,3 +25,7 @@ Route::get('/deconnexion', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/{name?}', [ShowcaseController::class, 'index'])->name('showcase');
 require __DIR__.'/auth.php';
+
+//utilities
+
+Route::get('/images/{path}', [ImageController::class, 'show']);

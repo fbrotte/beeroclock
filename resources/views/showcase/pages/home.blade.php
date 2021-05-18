@@ -39,7 +39,6 @@
 <div class="swiper-button-next"></div>
 <div class="swiper-button-prev"></div>
 @endsection --}}
-
 <main id="showcase">
     <hr>
     <div class="swiper-container">
