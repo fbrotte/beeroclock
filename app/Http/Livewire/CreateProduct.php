@@ -2,12 +2,15 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Product;
 use Livewire\Component;
 use App\Models\ProductType;
-use App\Models\Product;
+use Illuminate\Support\Str;
+use Livewire\WithFileUploads;
 
 class CreateProduct extends Component
 {
+    use WithFileUploads;
     public $product_name;
     public $description;
     public $alcohol;
@@ -15,15 +18,17 @@ class CreateProduct extends Component
     public $price;
     public $qty;
     public $product_type_id;
+    public $img;
 
     protected $rules = [
         'product_name' => 'required',
         'description' => 'required',
         'alcohol' => 'numeric',
-        'origin' => 'alpha_num',
-        'price' => 'numeric | required',
+        'origin' => 'string',
+        'price' => 'numeric | required|max:10',
         'qty' => 'integer',
         'product_type_id' => 'required|exists:product_types,id',
+        'img' => 'image|max:10240',
 
     ];
 
@@ -33,6 +38,7 @@ class CreateProduct extends Component
         'alcohol.numeric' => "Le pourcentage d'alcool doit etre indiqué en chiffre",
         'origin.alpha_num' => "Il faut remplire uniquement avec des lettres.",
         'price.numeric' => "Le prix doit être indiqué en chiffre",
+        'price.max' => 'C\'trop cher frere',
         'qty.integer' => "La quantité doit être indiqué en avec un nombre entier",
         'product_type_id.exists' => "Ne t'amuse pas à changer le html petit coquin",
         'product_type_id.required' => "Tu dois selectionner une catagorie obligatoirement",
@@ -41,6 +47,16 @@ class CreateProduct extends Component
     public function submit()
     {
         $data = $this->validate();
+        // remove img inner array
+        array_pop($data);
+
+        $img_url_slug = $this->img->getClientOriginalName();
+
+        $this->img->store('image');
+        $data = array_merge($data, ['img_url' => $img_url_slug]);
+
+        // dd($data);
+
         // dump('test');
         Product::create($data);
         session()->flash('message', 'Le produit a bien été ajouté');
