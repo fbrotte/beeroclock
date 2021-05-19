@@ -7,7 +7,8 @@
         <div class="pt-2 relative mx-auto text-gray-600">
             <input
                 class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-                type="search" name="search" placeholder="Search" wire:model="search">
+                type="search" placeholder="Search" wire:model.debounce.500ms="search">
+
             <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
                 <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
@@ -24,15 +25,8 @@
                 <path
                     d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
                     fill="#648299" fill-rule="nonzero" /></svg>
-            <select id="category"
-                class="border border-gray-300 text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
-                <option>Biére</option>
-                <option>Vin</option>
-                <option>Shooter</option>
-                <option>Planter</option>
-                <option>Soft</option>
-                <option>Plateau charcuterie</option>
-            </select>
+
+                <x-forms.category-select :options="$productType"></x-forms.category-select>
         </div>
         <table class="table-auto w-full mt-5 text-right">
 
@@ -45,7 +39,7 @@
 
             {{-- @dump($products) --}}
             <tbody>
-                @foreach($products->all() as $item)
+                @foreach($products as $item)
                     <tr class="text-center" wire:click="startEdit({{ $item->id }})">
                         <td class="py-4 text-sm text-gray-600 flex flex-row items-center text-left">
                             <div class="w-8 h-8 overflow-hidden mr-3">
@@ -61,8 +55,7 @@
                         <hr>
                         <tr>
                             <td class="py-4 text-sm text-gray-600 flex flex-row items-center text-left">
-                                editer
-                                {{-- <livewire:create-product /> --}}
+                                <x-dashboard.product-form button="Modifier ce produit" :user="$item"/>
                             </td>
                         </tr>
                         <hr>
