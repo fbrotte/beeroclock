@@ -21,7 +21,7 @@ class Register extends Component
         'firstname' => 'required|string|max:255',
         'lastname' => 'required|string|max:255',
         'email' => 'required|string|email|max:255|unique:users',
-        'phone' => 'required|string|max:255',
+        'phone' => 'required|string|max:255|unique:users',
         'password' => 'required|string|confirmed|min:8',
         // 'password_confirmation' => 'same:password'
     ];
@@ -30,7 +30,9 @@ class Register extends Component
         'firstname.required' => "Le prenom est obligatoire",
         'lastname.required' => "Le nom est obligatoire",
         'email.required' => "l'email est obligatoire",
+        'email.unique' => "Cette adresse email est deja prise",
         'phone.required' => "Le telephone est obligatoire",
+        'phone.unique' => "Ce numéro de telephone est deja pris",
         'password.required' => "Le mot de passe est obligatoire",
         'password.confirmed' => "Le mot de passe ne correspond pas",
     ];
