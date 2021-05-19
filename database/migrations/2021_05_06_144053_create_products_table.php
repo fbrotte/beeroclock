@@ -18,9 +18,9 @@ class CreateProductsTable extends Migration
             $table->string('product_name');
             $table->text('description');
 
-            $table->integer('alcohol')->nullable();
+            $table->decimal('alcohol')->nullable();
             $table->string('origin')->nullable();
-            $table->integer('price');
+            $table->decimal('price');
             $table->integer('qty')->nullable();
             $table->string('img_url')->nullable();
             

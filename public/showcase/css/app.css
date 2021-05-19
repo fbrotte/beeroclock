@@ -86,6 +86,7 @@ strong {
 header {
   z-index: 10;
 }
+
 header .logo {
   background-image: url("/images/logo.svg");
   background-repeat: no-repeat;
@@ -96,6 +97,7 @@ header .logo {
   height: 100px;
   width: 300px;
 }
+
 header .slogan {
   font-size: 20px;
   color: var(--white);
@@ -116,11 +118,13 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
 body::before {
   z-index: 20;
   pointer-events: none;
   border: solid var(--yellow) 15px;
 }
+
 body::after {
   content: "";
   background-image: url("/images/background2.jpg");
@@ -137,6 +141,7 @@ main {
 hr {
   border: 2px solid var(--yellow);
   width: 30%;
+  margin: inherit !important;
 }
 
 hr.small {
@@ -149,9 +154,10 @@ hr.sub {
   top: 80px;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+span.error {
+  color: var(--white);
+}
+
 .btn-black, .btn-white, .btn-green, .btn-red, .btn-yellow, .btn-dark-yellow, .btn-grey, button {
   color: var(--black);
   background: var(--yellow);
@@ -162,6 +168,7 @@ hr.sub {
   border-radius: 9px;
   z-index: 2;
 }
+
 .btn-black::after, .btn-white::after, .btn-green::after, .btn-red::after, .btn-yellow::after, .btn-dark-yellow::after, .btn-grey::after, button::after {
   z-index: -1;
   border-radius: 9px;
@@ -174,6 +181,7 @@ hr.sub {
   background: var(--dark-yellow);
   transition: height 0.5s ease;
 }
+
 .btn-black:hover::after, .btn-white:hover::after, .btn-green:hover::after, .btn-red:hover::after, .btn-yellow:hover::after, .btn-dark-yellow:hover::after, .btn-grey:hover::after, button:hover::after {
   height: 100%;
 }
@@ -182,6 +190,7 @@ button p {
   color: var(--white);
   font-size: 0.9rem;
 }
+
 button b {
   font-weight: 600;
   font-size: 2rem;
@@ -223,7 +232,6 @@ button b {
 }
 
 input {
-  color: var(--white);
   border-radius: 3px;
   margin-bottom: 20px;
   margin-top: 5px;
@@ -293,6 +301,7 @@ label {
   flex-direction: column;
   align-items: center;
 }
+
 #home button {
   margin: 10px;
   font-weight: bold;
@@ -312,11 +321,13 @@ img {
 #showcase {
   margin-bottom: 30px;
 }
+
 #showcase .swiper-container {
   padding: 0px 30px;
   width: 100vw;
   min-height: 50vh;
 }
+
 #showcase .swiper-container .swiper-slide {
   padding: 20px;
   display: flex;
@@ -324,25 +335,31 @@ img {
   flex-direction: column;
   gap: 20px;
 }
+
 #showcase .swiper-container .swiper-slide h1, #showcase .swiper-container .swiper-slide h2, #showcase .swiper-container .swiper-slide p {
   text-align: center;
   color: var(--white);
 }
+
 #showcase .swiper-container .swiper-slide h1 {
   font-size: 2rem;
   font-weight: bold;
   padding-bottom: 50px;
 }
+
 #showcase .swiper-container .swiper-slide h2 {
   font-size: 1.5rem;
 }
+
 #showcase .swiper-container .swiper-slide img {
-  width: 50%;
+  width: 70%;
 }
+
 #showcase .swiper-container .swiper-slide p {
   font-size: 1rem;
   text-align: center;
 }
+
 #showcase .swiper-container .swiper-slide .price {
   font-weight: 900;
   color: var(--white);
@@ -350,16 +367,20 @@ img {
   padding: 8px;
   border-radius: 5px;
 }
+
 #showcase .swiper-button-prev {
   left: 60px !important;
 }
+
 #showcase .swiper-button-next {
   right: 60px !important;
 }
+
 #showcase .swiper-button-next, #showcase .swiper-button-prev {
   top: 15% !important;
   color: var(--yellow) !important;
 }
+
 #showcase .swiper-button-next::after, #showcase .swiper-button-prev::after {
   font-size: 0.9rem !important;
   font-weight: 1000 !important;
@@ -368,30 +389,37 @@ img {
   border-radius: 38%;
   padding: 10px;
 }
+
 #showcase .social {
   text-align: center;
   color: var(--white);
 }
+
 #showcase .social h1 {
   font-size: 1.5rem;
   padding: 10px 30px;
 }
+
 #showcase .social p {
   font-size: 1rem;
   padding: 10px 50px;
   margin-bottom: 20px;
 }
+
 #showcase .legal {
   text-align: center;
 }
+
 #showcase .legal #fkw {
   color: var(--white);
   font-size: 0.9rem;
   margin: 20px;
 }
+
 #showcase .legal #fkw a {
   color: var(--white);
 }
+
 #showcase .legal button {
   font-size: 0.9rem;
   padding: 10px !important;

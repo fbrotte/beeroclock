@@ -3,51 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\UserTracking;
+use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
-class UserTrackingController extends Controller
+class AuthController extends Controller
 {
-    public function __construct()
+    public function scan_qrcode(Request $request, Int $table)
     {
-        // $this->middleware('auth');
-    }
-
-    public function create()
-    {
-        return view('showcase.pages.auth.index');
-    }
-
-    public function scan_qrcode(Int $table)
-    {
-            $user = Auth::user();
-
-            //dd($table);
-            $last_scan = UserTracking::where('users_id', $user->id)->alreadyScan();
-
-            if($last_scan->count() > 0)
-                return redirect(route('showcase'))->with('status', 'alreadyScan');
-
-        
-            $tracking_created = UserTracking::create([
-                'users_id' => $user->id,
-                'table' => $table
-            ]);
-
-            return $this->result($tracking_created);
-    }
-
-   public function logout()
-   {
-        Auth::logout();
+        // dd('test');
+        $request->session()->push('qrcode', $table);
         return redirect()->route('login');
-   }
-
-   private function result($tracking_created)
-   {
-        if ($tracking_created->id % 100 === 0)
-            return redirect(route('showcase'))->with('status', 'userWin');
-
-        return redirect(route('showcase'))->with('status', 'userLogged');
-   }
+    }
 }
