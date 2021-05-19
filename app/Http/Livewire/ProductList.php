@@ -27,7 +27,7 @@ class ProductList extends Component
 
     protected $rules = [
         ''
-    ]
+    ];
 
     public function startEdit(int $id)
     {

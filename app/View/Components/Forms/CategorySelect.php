@@ -9,14 +9,16 @@ class CategorySelect extends Component
 {
 
     public Collection $options;
+    public String $id;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(Collection $options)
+    public function __construct(Collection $options, String $id)
     {
         $this->options = $options;
+        $this->id = $id;
     }
 
     /**

@@ -17,7 +17,7 @@
 
             @forelse($products as $item)
               <h2>{{ $item->product_name }}</h2>
-              <img src="{{images($item->img_url)}}"/>
+              <img src="{{image($item->img_url)}}"/>
 
               <p class="price">{{ getPrice($item->price, $item->qty, $type->qty) }}</p>
               <p class="description">{{ $item->description }}</p>

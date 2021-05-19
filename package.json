@@ -28,6 +28,7 @@
         "jquery": "^3.6.0",
         "semver": "^7.3.5",
         "swiper": "^6.5.9",
+        "tailwindcss-animatecss": "^1.0.7",
         "themify-icons": "^1.0.0"
     }
 }
