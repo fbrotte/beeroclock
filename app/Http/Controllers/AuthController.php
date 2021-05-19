@@ -11,6 +11,7 @@ class AuthController extends Controller
 {
     public function scan_qrcode(Request $request, Int $table)
     {
+        // dd('test');
         $request->session()->push('qrcode', $table);
         return redirect()->route('login');
     }

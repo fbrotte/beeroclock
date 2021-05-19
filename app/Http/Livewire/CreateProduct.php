@@ -23,8 +23,8 @@ class CreateProduct extends Component
     protected $rules = [
         'product_name' => 'required',
         'description' => 'required',
-        'alcohol' => 'numeric',
-        'origin' => 'string',
+        'alcohol' => '',
+        'origin' => '',
         'price' => 'numeric | required|max:10',
         'qty' => 'integer',
         'product_type_id' => 'required|exists:product_types,id',

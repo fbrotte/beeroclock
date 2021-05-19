@@ -16,7 +16,7 @@
 </head>
 <body>
     @if (session()->has('message'))
-      <div class="alert-red">
+      <div class="alert-green">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
         <strong>Info!</strong> <p>{{ session()->get('message') }}</p>
       </div>
