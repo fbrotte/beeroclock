@@ -8,8 +8,8 @@ mix
 .sass('resources/showcase/sass/app.sass', 'public/showcase/css')
 
     /*Admin assets*/
-.js('resources/admin/js/app.js', 'public/admin/js')
-.sass('resources/admin/sass/app.sass', 'public/admin/css')
+.js('resources/admin/js/app.js', 'public/dashboard/js')
+.sass('resources/admin/sass/app.sass', 'public/dashboard/css')
 .options({
     postCss: [ tailwindcss('./tailwind.config.js') ],
 })

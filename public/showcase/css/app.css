@@ -141,6 +141,7 @@ main {
 hr {
   border: 2px solid var(--yellow);
   width: 30%;
+  margin: inherit !important;
 }
 
 hr.small {
@@ -151,6 +152,10 @@ hr.sub {
   width: 40%;
   position: relative;
   top: 80px;
+}
+
+span.error {
+  color: var(--white);
 }
 
 /* ! tailwindcss v2.1.2 | MIT License | https://tailwindcss.com */
@@ -32317,7 +32322,6 @@ button b {
 }
 
 input {
-  color: var(--white);
   border-radius: 3px;
   margin-bottom: 20px;
   margin-top: 5px;

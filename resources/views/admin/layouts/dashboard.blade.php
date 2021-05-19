@@ -11,7 +11,7 @@
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
-     <link href={{ asset("admin/css/app.css") }} rel="stylesheet" />
+     <link href={{ asset("dashboard/css/app.css") }} rel="stylesheet" />
 	 @livewireStyles
 </head>
 
@@ -19,6 +19,6 @@
 	@include('admin.layouts._navbar')
     @yield('content')          
 </body>
-	<script src={{ asset("admin/js/app.js") }}></script>
+	<script src={{ asset("dashboard/js/app.js") }}></script>
 	@livewireScripts
 </html>

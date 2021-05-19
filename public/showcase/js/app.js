@@ -2006,9 +2006,12 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************************!*\
   !*** ./resources/admin/sass/app.sass ***!
   \***************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Indenting at the beginning of the document is illegal.\n  ╷\n1 │  @tailwind base\r\n  │ ^\n  ╵\n  resources\\admin\\sass\\app.sass 1:1  root stylesheet\n    at processResult (C:\\laragon\\www\\BeerOClock\\node_modules\\webpack\\lib\\NormalModule.js:690:19)\n    at C:\\laragon\\www\\BeerOClock\\node_modules\\webpack\\lib\\NormalModule.js:792:5\n    at C:\\laragon\\www\\BeerOClock\\node_modules\\loader-runner\\lib\\LoaderRunner.js:399:11\n    at C:\\laragon\\www\\BeerOClock\\node_modules\\loader-runner\\lib\\LoaderRunner.js:251:18\n    at context.callback (C:\\laragon\\www\\BeerOClock\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at C:\\laragon\\www\\BeerOClock\\node_modules\\sass-loader\\dist\\index.js:54:7\n    at Function.call$2 (C:\\laragon\\www\\BeerOClock\\node_modules\\sass\\sass.dart.js:92612:16)\n    at _render_closure1.call$2 (C:\\laragon\\www\\BeerOClock\\node_modules\\sass\\sass.dart.js:81115:12)\n    at _RootZone.runBinary$3$3 (C:\\laragon\\www\\BeerOClock\\node_modules\\sass\\sass.dart.js:27260:18)\n    at _FutureListener.handleError$1 (C:\\laragon\\www\\BeerOClock\\node_modules\\sass\\sass.dart.js:25816:19)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ })
 
@@ -2122,6 +2125,7 @@ throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugi
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/showcase/js/app": 0,
+/******/ 			"dashboard/css/app": 0,
 /******/ 			"showcase/css/app": 0
 /******/ 		};
 /******/ 		
@@ -2170,9 +2174,9 @@ throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugi
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["showcase/css/app"], () => (__webpack_require__("./resources/showcase/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["showcase/css/app"], () => (__webpack_require__("./resources/showcase/sass/app.sass")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["showcase/css/app"], () => (__webpack_require__("./resources/admin/sass/app.sass")))
+/******/ 	__webpack_require__.O(undefined, ["dashboard/css/app","showcase/css/app"], () => (__webpack_require__("./resources/showcase/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["dashboard/css/app","showcase/css/app"], () => (__webpack_require__("./resources/showcase/sass/app.sass")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["dashboard/css/app","showcase/css/app"], () => (__webpack_require__("./resources/admin/sass/app.sass")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
