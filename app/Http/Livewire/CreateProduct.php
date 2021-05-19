@@ -52,7 +52,7 @@ class CreateProduct extends Component
 
         $img_url_slug = $this->img->getClientOriginalName();
 
-        $this->img->store('image');
+        $this->img->storeAs('', $img_url_slug);
         $data = array_merge($data, ['img_url' => $img_url_slug]);
 
         // dd($data);
@@ -63,6 +63,7 @@ class CreateProduct extends Component
 
         $this->emit('alert_remove');
         $this->reset();
+        $this->product_type_id = 0;
     }
 
     public function render()

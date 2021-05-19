@@ -6,7 +6,7 @@
         </div>
     @endif
 
-    <x-forms.category-select :options="$productType"></x-forms.category-select>
+    <x-forms.category-select id="product_type_id" :options="$productType"></x-forms.category-select>
     
     <x-dashboard.product-form button="Ajouter ce produit"/>
 </form>
