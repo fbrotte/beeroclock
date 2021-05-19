@@ -2125,7 +2125,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/showcase/js/app": 0,
-/******/ 			"admin/css/app": 0,
+/******/ 			"dashboard/css/app": 0,
 /******/ 			"showcase/css/app": 0
 /******/ 		};
 /******/ 		
@@ -2174,9 +2174,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["admin/css/app","showcase/css/app"], () => (__webpack_require__("./resources/showcase/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["admin/css/app","showcase/css/app"], () => (__webpack_require__("./resources/showcase/sass/app.sass")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["admin/css/app","showcase/css/app"], () => (__webpack_require__("./resources/admin/sass/app.sass")))
+/******/ 	__webpack_require__.O(undefined, ["dashboard/css/app","showcase/css/app"], () => (__webpack_require__("./resources/showcase/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["dashboard/css/app","showcase/css/app"], () => (__webpack_require__("./resources/showcase/sass/app.sass")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["dashboard/css/app","showcase/css/app"], () => (__webpack_require__("./resources/admin/sass/app.sass")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
