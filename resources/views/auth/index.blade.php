@@ -1,6 +1,6 @@
 @extends('showcase.layouts.showcase')
 @section('title', 'Beer\'o Clock')
-@section('slogan', 'Bienvenue')
+@section('slogan', 'We keep in touch')
 @section('content') 
 
 <style>

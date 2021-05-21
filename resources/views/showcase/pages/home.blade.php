@@ -14,6 +14,8 @@
             <h1>{{ $type->name }}</h1>
 
             @php $products = $type->products()->get() @endphp
+            
+            @if($type->name == 'Vins') <p>Chaque bouteille est disponible à 20€ (Équivalent 1 verre offert)</p> @endif
 
             @forelse($products as $item)
               <h2>{{ $item->product_name }}</h2>
@@ -22,7 +24,7 @@
               <img src="{{image($item->img_url)}}"/>
               @endif
 
-              <p class="price">{{ getPrice($item->price, $item->qty, $type->qty) }}</p>
+              <p class="price">{{ getPrice($item->price, $item->qty, $type->qty) }} @if ($type->name === 'Vins') / le verre @endif</p>
               <p class="description">{{ $item->description }}</p>
 
               <p>
