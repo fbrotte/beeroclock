@@ -1,7 +1,7 @@
-@extends('layouts.showcase')
+@extends('showcase.layouts.showcase')
 @section('title', 'Beer\'o Clock')
 @section('slogan', '')
-@section('content')
+{{-- @section('content')
 
 <div id="legal" style="margin: 30px; margin-bottom: 100px; color: white; z-index: 11;">
     <h1>Données personnelles</h1>
@@ -31,4 +31,4 @@
     
 </div>
 
-@endsection
+@endsection --}}
