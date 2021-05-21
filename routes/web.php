@@ -22,7 +22,7 @@ Route::middleware(['auth.admin'])->group(function ()
 });
 
 // utilities
-Route::get('/images/{path}', [ImageController::class, 'show']);
+Route::get('/image/{path}', [ImageController::class, 'show']);
 
 
 Route::middleware(['auth'])->group(function ()

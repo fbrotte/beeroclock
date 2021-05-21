@@ -44,5 +44,5 @@ function fullname($who = 'auth'): String
 
 function image($img, $h = null, $w = null, $q = 10, $fm = 'webp', $crop = 'crop')
 {
-    return asset("images/" .$img. "?h=".$h."&w=".$w."&q=".$q."&fm=".$fm."&fit=".$crop . '&bg=white'); 
+    return asset("image/" .$img. "?h=".$h."&w=".$w."&q=".$q."&fm=".$fm."&fit=".$crop . '&bg=white'); 
 }
