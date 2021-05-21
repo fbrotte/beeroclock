@@ -40,10 +40,13 @@ class ShowcaseController extends Controller
             'users_id' => $user->id,
             'table' => $table
         ]);
+        
 
         if ($tracking_created->id % 100 === 0)
             return 'Tu as gagné un demi, va vite voir Olivier !';
             //  return redirect(route('showcase'))->with('status', 'userWin');
+            
+    //Enregistre toi vite ! si tu es le 100eme tu gagne un demi au beer
  
         return "Tu peux maintenant découvir la carte du Beer !";
         //  return redirect(route('showcase'))->with('status', 'userLogged');
