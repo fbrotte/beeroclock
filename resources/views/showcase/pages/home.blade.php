@@ -13,7 +13,7 @@
 
             <h1>{{ $type->name }}</h1>
 
-            @php $products = $type->products()->paginate(4) @endphp
+            @php $products = $type->products()->get() @endphp
 
             @forelse($products as $item)
               <h2>{{ $item->product_name }}</h2>
