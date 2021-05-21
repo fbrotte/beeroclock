@@ -13,6 +13,6 @@
 
         <label>Mot de passe</label>
         <input wire:model.defer="password" type="password">
-        <button type="submit">Envoyer</button>
+        <button type="submit">Me connecter</button>
     </form>
 </div>

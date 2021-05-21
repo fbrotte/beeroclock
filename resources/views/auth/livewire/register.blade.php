@@ -1,6 +1,13 @@
 <div>
     <form wire:submit.prevent="submit" id="register" x-spread="register_reveal">
         @csrf
+
+        <div class="alert-green">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>Info!</strong> <p>Enregistre toi vite ! Si tu es le 100eme tu gagne un demi au Beer !</p>
+        </div>
+
+
         <label>Prénom</label>
         @error('firstname') <span class="error">{{ $message }}</span> @enderror
         <input wire:model.defer="firstname" type="text" placeholder="Olivier">
@@ -26,6 +33,6 @@
         <input wire:model.defer="password_confirmation" type="password" placeholder="Sûr ?">
 
 
-        <button type="submit">Envoyer</button>
+        <button type="submit">Creer mon compte</button>
     </form>
 </div>
