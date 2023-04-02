@@ -24,9 +24,9 @@ Route::middleware(['auth.admin'])->group(function ()
 // utilities
 Route::get('/image/{path}', [ImageController::class, 'show']);
 
+    Route::get('/{name?}', [ShowcaseController::class, 'index'])->name('showcase');
 
 Route::middleware(['auth'])->group(function ()
 {
     Route::get('/deconnexion', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
-    Route::get('/{name?}', [ShowcaseController::class, 'index'])->name('showcase');
 });

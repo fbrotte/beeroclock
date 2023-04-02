@@ -1,6 +1,6 @@
 @extends('showcase.layouts.showcase')
 @section('title', 'Beer\'o Clock')
-@section('slogan', 'Bonjour ' . Auth::user()->firstname . ',')
+@section('slogan', 'Bonjour')
 @section('content')
 
 <main id="showcase">
